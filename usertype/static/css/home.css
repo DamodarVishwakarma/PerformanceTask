@@ -1,0 +1,80 @@
+.logo {
+    font-family: 'Clicker Script', cursive;
+  }
+  
+  .logo a {
+    color: #212529;
+    text-decoration: none;
+  }
+  
+  footer {
+    font-size: .9rem;
+  }
+  
+  footer a {
+    color: #212529;
+  }
+  
+  .list-group-formset label {
+    display: none;
+  }
+  
+  .list-group-formset .form-group,
+  .list-group-formset .invalid-feedback {
+    margin-bottom: 0;
+  }
+  
+  .list-group-formset .form-control {
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+  }
+  
+  .btn-customer {
+    color: #fff;
+    background-color: #91afb6;
+    border-color: #91afb6;
+  }
+  
+  .btn-customer:hover,
+  .btn-customer:active {
+    color: #fff;
+    background-color: #608993;
+    border-color: #608993;
+  }
+  
+  .btn-staff {
+    color: #fff;
+    background-color: #8980a5;
+    border-color: #8980a5;
+  }
+  
+  .btn-staff:hover,
+  .btn-staff:active {
+    color: #fff;
+    background-color: #66598B;
+    border-color: #66598B;
+  }
+
+  .btn-manager {
+    color: #fff;
+    background-color: #6f9962;
+    border-color: #4a8826;
+  }
+  
+  .btn-manager:hover,
+  .btn-manager:active {
+    color: rgb(150, 122, 122);
+    background-color: #351d77;
+    border-color: #3b247c;
+  }
+  
+  .has-danger .radio,
+  .has-danger .checkbox {
+    color: #dc3545;
+  }
+  
+  .has-danger .invalid-feedback {
+    display: block;
+  }

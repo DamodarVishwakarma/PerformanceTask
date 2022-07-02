@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method="get" action="">
+  <input type="search" aria-invalid="false" id="search" name="keyword" placeholder="&nbsp;Search by pet"
+    class="searchInputField" />
+</form><br>
+  <div class="card">
+    <table class="table mb-0">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Room NO.</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for pet in pets %}
+          <tr>
+            <td class="align-middle">{{ pet.name }}</td>
+            <td class="align-middle">{{ pet.room_number }}</td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td class="bg-light text-center font-italic" colspan="4">No pets right now.</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

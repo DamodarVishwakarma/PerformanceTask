@@ -1,0 +1,14 @@
+{% load i18n %}{% autoescape off %}
+{% blocktrans %}Hey, You're receiving this email because you requested to create account with us {{ site_name }}.{% endblocktrans %}
+
+{% trans "Please go to the following page and create account:" %}
+{% block reset_link %}
+{{ protocol }}://{{ domain }}{% url 'send_email' uidb64=uid token=token %}
+{% endblock %}
+{% trans "Your username, in case you've forgotten:" %} {{ user.get_username }}
+
+{% trans "Thanks for using our site!" %}
+
+{% blocktrans %}The {{ site_name }} team{% endblocktrans %}
+
+{% endautoescape %}
