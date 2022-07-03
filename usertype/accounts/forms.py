@@ -2,18 +2,19 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.db import transaction
 from django.contrib.auth.forms import AuthenticationForm
-from accounts.models import User
+from accounts.models import User,Customer, Staff, Manager
 
 
 class CustomerSignUpForm(UserCreationForm):
 
     class Meta:
-        model = User
+        model = Customer
         fields = ['username', 'email']
         
     @transaction.atomic
     def save(self):
         user = super().save(commit=False)
+        user.is_active = True
         user.is_customer = True
         user.save()
         return user
@@ -21,12 +22,12 @@ class CustomerSignUpForm(UserCreationForm):
 class StaffSignUpForm(UserCreationForm):
   
     class Meta:
-        model = User
+        model = Staff
         fields = ['username', 'email']
 
     def save(self, commit=True):
         user = super().save(commit=False)
-        user.is_customer = True
+        user.is_active = True
         user.is_staff = True
         if commit:
             user.save()
@@ -35,13 +36,12 @@ class StaffSignUpForm(UserCreationForm):
 class ManagerSignUpForm(UserCreationForm):
    
     class Meta:
-        model = User
+        model = Manager
         fields = ['username', 'email']
 
     def save(self, commit=True):
         user = super().save(commit=False)
-        user.is_customer = True
-        user.is_staff = True
+        user.is_active = True
         user.is_manager = True
         if commit:
             user.save()

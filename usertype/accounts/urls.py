@@ -21,6 +21,5 @@ urlpatterns = [
     path('pet/change/<int:pk>/staff/', PetStaffUpdateView.as_view(), name='pet_change_staff'),
     path('pet/change/<int:pk>/manager/', PetManagerUpdateView.as_view(), name='pet_change_manager'),
     path('pet/delete/<int:pk>/', PetCustomerDeleteView.as_view(), name='pet_delete'),
-    path('pet/delete/staff/<int:pk>/', PetStaffDeleteView.as_view(), name='pet_delete_staff'),
     path('pet/delete/manager/<int:pk>/', PetManagerDeleteView.as_view(), name='pet_delete_manager'),
 ]
